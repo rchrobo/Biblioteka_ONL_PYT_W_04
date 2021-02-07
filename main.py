@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
-from sql_funk import create_author, create_publisher, get_all_authors, get_all_publishers, get_author_by_id
+from sql_funk import create_author, create_publisher, get_all_authors, \
+    get_all_publishers, get_author_by_id, update_author_by_id
 app = Flask(__name__)
 
 
@@ -18,6 +19,8 @@ def author():
 
 @app.route("/autor/<int:id>/", methods=['GET', 'POST'])
 def edit_author(id):
+    if request.method == "POST":
+        update_author_by_id(request.form['first_name'], request.form['last_name'],id)
     author = get_author_by_id(id)
     return render_template('author_edit.html', author=author)
 

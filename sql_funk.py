@@ -52,6 +52,14 @@ def get_author_by_id(id):
     connection.close()
     return data
 
+def update_author_by_id(first_name,last_name, id):
+    sql = f"""
+        UPDATE author SET first_name = '{first_name}', last_name='{last_name}' WHERE id = {id};
+        """
+    connection = connect()
+    cursor = connection.cursor()
+    cursor.execute(sql)
+    connection.close()
 
 if __name__ == "__main__":
     print(get_author_by_id(1))
