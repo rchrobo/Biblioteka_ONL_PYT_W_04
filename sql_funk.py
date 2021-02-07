@@ -11,7 +11,7 @@ def create_author(first_name, last_name):
 
 def create_publisher(name, city):
     sql = f"""
-    INSERT INTO author (name, city) VALUES ('{name}', '{city}');
+    INSERT INTO publisher (name, city) VALUES ('{name}', '{city}');
     """
     sikorka = connect()
     alibaba = sikorka.cursor()

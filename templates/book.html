@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+
+{%block zawartosc%}
+    <form method="post">
+        <p>Tytuł:<input type="text" name="title"> </p>
+        <p>Autor:<select name="author_id">
+            {%for author in authors %}
+                <option value="{{author.0}}">{{author.1}} {{author.2}}</option>
+            {%endfor%}
+        </select> </p>
+        <p>Wydawca:<select name="publisher_id">
+            {%for publisher in publishers %}
+                <option value="{{publisher.0}}">{{publisher.1}} {{publisher.2}}</option>
+            {%endfor%}
+        </select> </p>
+        <p><input type="submit" > </p>
+    </form>
+
+<p>
+<!--<ul>-->
+<!--    {% for author in authors %}-->
+<!--        <li> <a href="/autor/{{author.0}}/"> {{author.1}} {{author[2]}}</a></li>-->
+<!--    {%endfor%}-->
+
+<!--</ul>-->
+
+</p>
+{%endblock%}

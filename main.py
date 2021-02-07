@@ -27,11 +27,19 @@ def edit_author(id):
 
 @app.route("/publisher/", methods=['GET', 'POST'])
 def publisher():
-    if request.method == 'GET':
-        create_publisher(request.form['first_name'], request.form['last_name'])
+    if request.method == 'POST':
+        create_publisher(request.form['name'], request.form['city'])
 
     data = get_all_publishers()
     return render_template('publisher.html', publishers=data)
+
+
+@app.route("/book/", methods=['POST', 'GET'])
+def book():
+    authors = get_all_authors()
+    publishers = get_all_publishers()
+    return render_template("book.html", authors=authors, publishers=publishers)
+
 
 
 if __name__ == '__main__':
