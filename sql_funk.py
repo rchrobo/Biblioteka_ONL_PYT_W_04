@@ -19,5 +19,18 @@ def create_publisher(name, city):
     sikorka.close()
 
 
+def get_all_authors():
+    sql = """
+    SELECT * FROM author;
+    """
+    connection = connect()
+    cursor = connection.cursor()
+    cursor.execute(sql)
+    data = cursor.fetchall()
+    connection.close()
+    return data
+
+
 if __name__ == "__main__":
-    create_author('slawek', 'boguslawski')
+    for author in get_all_authors():
+        print(author)

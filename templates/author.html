@@ -6,4 +6,12 @@
         <p>Nazwisko:<input type="text" name="last_name"> </p>
         <p><input type="submit" > </p>
     </form>
+
+<p>
+<ul>
+    {% for author in authors %}
+    <li>{{author}}</li>
+    {%endfor%}
+</ul>
+</p>
 {%endblock%}
