@@ -32,3 +32,19 @@ def funk6(a, b, c):
 s = {'a': 1, 'b': 2, 'c': 3}
 
 funk6(*s)
+
+def funkcja(**kwargs):
+    for item in kwargs:
+        print (f"wartość w słowniku pod kuczem {item} to {kwargs[item]}")
+
+
+
+funkcja(slawek="jest super")
+
+
+
+
+
+
+
+

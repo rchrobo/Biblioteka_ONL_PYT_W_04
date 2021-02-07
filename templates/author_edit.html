@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+
+{%block zawartosc%}
+    <form method="post">
+        <p>Imie:<input type="text" name="first_name" value="{{author.1}}"> </p>
+        <p>Nazwisko:<input type="text" name="last_name" value="{{author.2}}"> </p>
+        <p><input type="submit" > </p>
+    </form>
+
+<p>
+<!--<ul>-->
+<!--    {% for author in authors %}-->
+<!--        <li> <a href="/autor/{{author.0}}/"> {{author.1}} {{author[2]}}</a></li>-->
+<!--    {%endfor%}-->
+
+<!--</ul>-->
+
+</p>
+{%endblock%}

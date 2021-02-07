@@ -30,7 +30,28 @@ def get_all_authors():
     connection.close()
     return data
 
+def get_all_publishers():
+    sql = """
+    SELECT * FROM publisher;
+    """
+    connection = connect()
+    cursor = connection.cursor()
+    cursor.execute(sql)
+    data = cursor.fetchall()
+    connection.close()
+    return data
+
+def get_author_by_id(id):
+    sql = f"""
+        SELECT * FROM author WHERE id={id};
+        """
+    connection = connect()
+    cursor = connection.cursor()
+    cursor.execute(sql)
+    data = cursor.fetchone()
+    connection.close()
+    return data
+
 
 if __name__ == "__main__":
-    for author in get_all_authors():
-        print(author)
+    print(get_author_by_id(1))

@@ -10,8 +10,10 @@
 <p>
 <ul>
     {% for author in authors %}
-    <li>{{author}}</li>
+        <li> <a href="/autor/{{author.0}}/"> {{author.1}} {{author[2]}}</a></li>
     {%endfor%}
+
 </ul>
+
 </p>
 {%endblock%}
