@@ -9,6 +9,22 @@ def create_author(first_name, last_name):
     alibaba.execute(sql)
     sikorka.close()
 
+
+def check_if_author_exist(last_name):
+    sql = """
+    SELECT * FROM author where last_name='{last_name}'
+    """
+    sikorka = connect()
+    alibaba = sikorka.cursor()
+    alibaba.execute(sql)
+    x = alibaba.fetchall()
+
+
+    sikorka.close()
+    if len(x) > 0:
+        return True
+    return False
+
 def create_publisher(name, city):
     sql = f"""
     INSERT INTO publisher (name, city) VALUES ('{name}', '{city}');
